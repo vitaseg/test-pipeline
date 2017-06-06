@@ -1,3 +1,4 @@
+def username = 'Jenkins'
 pipeline {
     agent any
 
@@ -5,6 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+		echo "I said, Hello Mr. ${username}"
             }
         }
         stage('Test') {
