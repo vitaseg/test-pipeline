@@ -12,6 +12,10 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+		echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+		for (String i in env) {
+		    echo "${i}"
+		}
             }
         }
         stage('Deploy') {
