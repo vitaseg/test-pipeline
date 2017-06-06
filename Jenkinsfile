@@ -13,8 +13,8 @@ pipeline {
             steps {
                 echo 'Testing..'
 		echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-		for (String i in env) {
-		    echo "${i}"
+		for (i in env) {
+		    println("${i.key} ${i.value}")
 		}
             }
         }
