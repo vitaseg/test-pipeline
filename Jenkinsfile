@@ -13,9 +13,9 @@ pipeline {
             steps {
                 echo 'Testing..'
 		echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-new File('./Jenkinsfile').eachLine {
+new File('.').eachFile {
     println it
-}            }
+}
         }
         stage('Deploy') {
             when {
