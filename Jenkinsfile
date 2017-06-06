@@ -14,7 +14,7 @@ pipeline {
                 echo 'Testing..'
 		echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
 		for (i in env) {
-		    println("${i.key} ${i.value}")
+		    print i
 		}
             }
         }
