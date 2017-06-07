@@ -1,11 +1,3 @@
-def username = 'Jenkins'
-def cloA = {param ->
-    def cloB = {
-        return param * 10    
-    }
-}
-
-def b = cloA(10)
 
 pipeline {
     agent any
@@ -14,8 +6,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		echo "I said, Hello Mr. ${username}"
-		println b(10)
             }
         }
         stage('Test') {
