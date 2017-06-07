@@ -6,15 +6,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-		fullComponentVersion = "${asd}.${env.BUILD_NUMBER}"
-		currentBuild.displayName = fullComponentVersion 
+                echo 'Building.. ${env.BUILD_NUMBER}'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-		echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+		echo "Running ${env.BUILD_ID} on ${env.BUILD_URL}"
 	    }
         }
         stage('Deploy') {
