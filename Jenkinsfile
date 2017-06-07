@@ -7,6 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.. ${currentBuild.displayName}"
+		currentBuild.displayName = 'asdasdas'
             }
         }
         stage('Test') {
