@@ -1,3 +1,5 @@
+def asd = "hi"
+String fullComponentVersion = null
 pipeline {
     agent any
 
@@ -5,7 +7,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		currentBuild.displayName = "hi ${env.BUILD_NUMBER}"
+		fullComponentVersion = "${asd}.${env.BUILD_NUMBER}"
+		currentBuild.displayName = fullComponentVersion 
             }
         }
         stage('Test') {
