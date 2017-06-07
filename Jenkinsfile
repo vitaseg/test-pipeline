@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+		currentBuild.displayName = "hi ${env.BUILD_NUMBER}"
             }
         }
         stage('Test') {
