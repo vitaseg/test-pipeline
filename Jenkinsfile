@@ -5,7 +5,6 @@ pipeline {
       steps {
         sh 'npm --version'
         sh 'npm install'
-        sh 'npm test'
       }
     }
   }
