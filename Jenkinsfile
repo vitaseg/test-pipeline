@@ -1,30 +1,12 @@
-def asd = "hi"
-String fullComponentVersion = null
 pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo "Building.. ${currentBuild.displayName}"
-		currentBuild.displayName = 'asdasdas'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-		echo "Running ${env.BUILD_ID} on ${env.BUILD_URL}"
-	    }
-        }
-        stage('Deploy') {
-            when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-              }
-            }
-            steps {
-                sh 'ls -la'
-            }
-        }
+  agent { docker 'node:6.3' }
+  stages {
+    stage('build') {
+      steps {
+        sh 'npm --version'
+        sh 'npm install'
+        sh 'npm test'
+      }
     }
+  }
 }
