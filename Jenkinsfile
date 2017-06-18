@@ -4,6 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'npm --version'
+        sh 'whoami'
         sh 'npm install'
       }
     }
